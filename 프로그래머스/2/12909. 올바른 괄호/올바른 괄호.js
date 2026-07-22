@@ -4,12 +4,6 @@ function solution(s) {
     const sArray = s.split('');
     
     sArray.forEach((el, idx) => {
-        if (idx === 0) {
-            sStack.push(el);
-            
-            return;
-        }
-        
         if (sStack[sStack.length - 1] === '(' && el === ')') {
             sStack.pop();
             
@@ -21,7 +15,5 @@ function solution(s) {
         }
     })
     
-    console.log(sStack)
-
     return !sStack.length;
 }
